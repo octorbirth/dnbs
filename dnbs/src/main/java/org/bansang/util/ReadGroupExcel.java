@@ -13,34 +13,43 @@ import org.apache.poi.ss.usermodel.Row;
 import org.apache.poi.ss.usermodel.Sheet;
 import org.apache.poi.ss.usermodel.Workbook;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
-import org.bansang.dto.GroupDTO;
+import org.bansang.dto.GroupMemberDTO;
 
+import lombok.extern.java.Log;
+
+@Log
 public class ReadGroupExcel {
 
 	// excel 파일로부터 그룹 정보를 읽는다.
-	public List<GroupDTO> readGroupFromExcelFile(String excelFilePath) throws IOException {
-	    List<GroupDTO> listGroup = new ArrayList<GroupDTO>();
+	public List<GroupMemberDTO> readGroupFromExcelFile(String excelFilePath) throws IOException {
+	    List<GroupMemberDTO> listGroup = new ArrayList<GroupMemberDTO>();
 	    FileInputStream inputStream = new FileInputStream(new File(excelFilePath));
 	 
-	    Workbook workbook = getWorkbook(inputStream, "C:\\zzz\\excel\\MyFirstExcel.xls");
+	    Workbook workbook = getWorkbook(inputStream, excelFilePath);
 	    Sheet firstSheet = workbook.getSheetAt(0);
 	    Iterator<Row> iterator = firstSheet.iterator();
+	    
+	    // 두번째 row부터 체크 (첫번째 row는 테이블 정보 row)
+	    iterator.next();
 	 
 	    while (iterator.hasNext()) {
 	        Row nextRow = iterator.next();
 	        Iterator<Cell> cellIterator = nextRow.cellIterator();
-	        GroupDTO dto = new GroupDTO();
+	        GroupMemberDTO dto = new GroupMemberDTO();
 	 
 	        while (cellIterator.hasNext()) {
 	            Cell nextCell = cellIterator.next();
 	            int columnIndex = nextCell.getColumnIndex();
+	            log.info("===================");
+	            log.info("" + columnIndex + ", " + (String)getCellValue(nextCell));
+	            log.info("===================");
 	 
 	            switch (columnIndex) {
-	            case 1:
-	                dto.setName((String) getCellValue(nextCell));
+	            case 0:
+	                dto.setMemberName((String) getCellValue(nextCell));
 	                break;
-	            case 2:
-	                dto.setEmail((String) getCellValue(nextCell));
+	            case 1:
+	                dto.setMemberEmail((String) getCellValue(nextCell));
 	                break;
 	            }
 	        }

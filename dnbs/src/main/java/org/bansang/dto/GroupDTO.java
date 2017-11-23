@@ -5,6 +5,6 @@ import lombok.Data;
 @Data
 public class GroupDTO {
 
-	private String name; // 이름
-	private String email; // 이메일
+	private int gno;
+	private String groupName;
 }

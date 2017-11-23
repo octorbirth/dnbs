@@ -1,6 +1,7 @@
 package org.bansang.service;
 
 import org.bansang.dto.GroupDTO;
+import org.bansang.dto.GroupMemberDTO;
 import org.bansang.mapper.GroupMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -12,8 +13,8 @@ public class GroupServiceImpl implements GroupService {
 	GroupMapper groupMapper;
 
 	@Override
-	public void uploadExcel(GroupDTO dto) {
+	public void upload(GroupMemberDTO groupMemberDTO) {
 
-		groupMapper.insert(dto);
-	}	
+		groupMapper.insertMember(groupMemberDTO);
+	}
 }
