@@ -20,30 +20,4 @@ public class RecommendController {
 	
 	@Autowired
 	private RecommendService recommendService;
-/*
-	@PostMapping("/new")
-	public void addValue(@RequestBody RecommendDTO dto) {
-		log.info("========================");
-		log.info(""+ dto);
-		log.info("========================");
-<<<<<<< HEAD
-		service.recommend(dto);
-	}
-
 }
-=======
-		recommendService.recommend(dto);
-	}*/
-	
-	@GetMapping("/list")
-	public void list() {
-		
-	}
-	
-	@GetMapping("/{recommendNum}")
-	public RecommendDTO getRecommendList(@RequestParam("recommendNum") Long recommendNum) {
-		
-		return recommendService.get(recommendNum);
-	}
-}
->>>>>>> branch 'master' of https://github.com/octorbirth/dnbs.git
