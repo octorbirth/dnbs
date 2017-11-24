@@ -3,6 +3,7 @@ package org.bansang.web;
 import org.bansang.dto.RecommendDTO;
 import org.bansang.service.RecommendService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -28,10 +29,5 @@ public class RecommendController {
 		log.info("========================");
 		service.recommend(dto);
 	}
-	
-	@CrossOrigin
-	@GetMapping("/list")
-	public void list() {
-		
-	}
+
 }

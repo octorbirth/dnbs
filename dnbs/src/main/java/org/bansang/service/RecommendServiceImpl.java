@@ -20,10 +20,7 @@ public class RecommendServiceImpl implements RecommendService {
 		
 	}
 
-	@Override
-	public List<RecommendDTO> list(RecommendDTO dto) {
-		// TODO Auto-generated method stub
-		return recommendMapper.list(dto);
-	}
-
 }
+
+
+

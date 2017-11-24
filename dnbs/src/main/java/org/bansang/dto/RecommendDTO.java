@@ -6,7 +6,7 @@ import lombok.Data;
 
 @Data
 public class RecommendDTO {
-	private int recommendNumber;
+	private Long recommendNumber;
 	private String latitude;
 	private String longitude;
 	private Date regiterDate;

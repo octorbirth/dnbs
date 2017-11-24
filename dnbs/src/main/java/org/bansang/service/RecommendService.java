@@ -8,5 +8,4 @@ public interface RecommendService {
 
 	 public void recommend(RecommendDTO dto);
 	 
-	 public List<RecommendDTO> list(RecommendDTO dto);
 }
