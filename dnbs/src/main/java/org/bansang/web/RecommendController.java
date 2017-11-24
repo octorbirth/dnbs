@@ -6,28 +6,44 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import lombok.extern.java.Log;
 
+@CrossOrigin
 @RestController
-@RequestMapping("/Recommend/*")
+@RequestMapping("/recommend/*")
 @Log
 public class RecommendController {
 	
 	@Autowired
-	private RecommendService service;
-
-	@CrossOrigin
-	@PostMapping("/recommend")
+	private RecommendService recommendService;
+/*
+	@PostMapping("/new")
 	public void addValue(@RequestBody RecommendDTO dto) {
 		log.info("========================");
 		log.info(""+ dto);
 		log.info("========================");
+<<<<<<< HEAD
 		service.recommend(dto);
 	}
 
 }
+=======
+		recommendService.recommend(dto);
+	}*/
+	
+	@GetMapping("/list")
+	public void list() {
+		
+	}
+	
+	@GetMapping("/{recommendNum}")
+	public RecommendDTO getRecommendList(@RequestParam("recommendNum") Long recommendNum) {
+		
+		return recommendService.get(recommendNum);
+	}
+}
+>>>>>>> branch 'master' of https://github.com/octorbirth/dnbs.git

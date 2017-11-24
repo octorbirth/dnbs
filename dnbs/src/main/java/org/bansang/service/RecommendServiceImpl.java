@@ -15,11 +15,18 @@ public class RecommendServiceImpl implements RecommendService {
     private RecommendMapper recommendMapper;
 	
 	@Override
-	public void recommend(RecommendDTO dto) {
-		recommendMapper.recommend(dto);
-		
+	public List<RecommendDTO> list(RecommendDTO dto) {
+		return recommendMapper.list(dto);
 	}
 
+<<<<<<< HEAD
+=======
+	@Override
+	public RecommendDTO get(Long recommendNum) {
+		return recommendMapper.selectInfo(recommendNum);
+	}
+
+>>>>>>> branch 'master' of https://github.com/octorbirth/dnbs.git
 }
 
 
