@@ -1,7 +1,7 @@
 package org.bansang.web;
 
-import org.bansang.dto.StoreDTO;
-import org.bansang.service.StoreService;
+import org.bansang.dto.RecommendDTO;
+import org.bansang.service.RecommendService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -13,16 +13,16 @@ import org.springframework.web.bind.annotation.RestController;
 import lombok.extern.java.Log;
 
 @RestController
-@RequestMapping("/store/*")
+@RequestMapping("/Recommend/*")
 @Log
-public class StoreController {
+public class RecommendController {
 	
 	@Autowired
-	private StoreService service;
+	private RecommendService service;
 
 	@CrossOrigin
 	@PostMapping("/recommend")
-	public void addValue(@RequestBody StoreDTO dto) {
+	public void addValue(@RequestBody RecommendDTO dto) {
 		log.info("========================");
 		log.info(""+ dto);
 		log.info("========================");
