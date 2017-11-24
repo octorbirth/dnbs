@@ -1,5 +1,12 @@
 package org.bansang.dto;
 
-public class StoreDTO {
+import lombok.Data;
 
+@Data
+public class StoreDTO {
+	private Long storeNuber;
+	private String storeName;
+	private String storeAddress;
+	private Double latitude;
+	private Double longtitude;
 }
