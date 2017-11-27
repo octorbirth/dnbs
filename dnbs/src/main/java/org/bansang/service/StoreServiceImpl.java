@@ -1,5 +1,7 @@
 package org.bansang.service;
 
+import java.util.List;
+
 import javax.inject.Inject;
 
 import org.bansang.dto.StoreDTO;
@@ -15,6 +17,11 @@ public class StoreServiceImpl implements StoreService{
 	@Override
 	public void recommend(StoreDTO dto) {
 		storeMapper.recommend(dto);
+	}
+
+	@Override
+	public List<StoreDTO> list(StoreDTO dto) {
+		return storeMapper.list(dto);
 	}
 
 }
