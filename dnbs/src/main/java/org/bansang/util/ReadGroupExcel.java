@@ -7,7 +7,7 @@ import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 
-
+import org.apache.poi.hssf.usermodel.HSSFWorkbook;
 import org.apache.poi.ss.usermodel.Cell;
 import org.apache.poi.ss.usermodel.Row;
 import org.apache.poi.ss.usermodel.Sheet;
@@ -86,7 +86,7 @@ public class ReadGroupExcel {
 	    if (excelFilePath.endsWith("xlsx")) {
 	        workbook = new XSSFWorkbook(inputStream);
 	    } else if (excelFilePath.endsWith("xls")) {
-//	        workbook = new HSSFWorkbook(inputStream);
+	        workbook = new HSSFWorkbook(inputStream);
 	    } else {
 	        throw new IllegalArgumentException("The specified file is not Excel file");
 	    }

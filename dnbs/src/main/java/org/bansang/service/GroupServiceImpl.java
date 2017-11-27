@@ -1,6 +1,5 @@
 package org.bansang.service;
 
-import org.bansang.dto.GroupDTO;
 import org.bansang.dto.GroupMemberDTO;
 import org.bansang.mapper.GroupMapper;
 import org.springframework.beans.factory.annotation.Autowired;
