@@ -1,11 +1,8 @@
 package org.bansang.service;
 
-import java.util.List;
-
-import org.bansang.dto.StoreDTO;
+import org.bansang.dto.RecommendDTO;
 
 public interface StoreService {
-	 public void recommend(StoreDTO dto);
-	 
-	 public List<StoreDTO> list(StoreDTO dto);
+	
+	public void register(RecommendDTO dto);
 }

@@ -1,16 +1,20 @@
 package org.bansang.mapper;
 
-import java.util.List;
 
 import org.apache.ibatis.annotations.Insert;
 import org.apache.ibatis.annotations.Select;
-import org.bansang.dto.StoreDTO;
+import org.bansang.dto.RecommendDTO;
 
 public interface StoreMapper {
 	
-	@Insert("insert into tbl_store (x, y, recommendStore) values (#{x}, #{y}, #{recommendStore})")
-    public void recommend(StoreDTO dto);
+	@Insert("insert into tbl_store (store_name, store_address, latitude, longitude, area_keyword) values (#{storeName}, #{storeAddress}, #{latitude}, #{longitude}, #{areaKeyword} )")
+    public void register(RecommendDTO dto);
 
-	@Select("select * from tbl_sj")
-	public List<StoreDTO> list(StoreDTO dto);
+	@Select("select * from tbl_store where store_name = #{storeName}  and latitude = #{latitude} and longitude = #{longitude} ")
+	public RecommendDTO exist(RecommendDTO dto);
 }
+
+
+
+
+
