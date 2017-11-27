@@ -13,7 +13,12 @@ public class RecommendServiceImpl implements RecommendService {
 
 	@Inject
     private RecommendMapper recommendMapper;
-	
+
+	@Override
+	public List<RecommendDTO> getList(Long storeNumber) {
+
+		return recommendMapper.selectList(storeNumber);
+	}	
 }
 
 

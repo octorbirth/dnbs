@@ -6,7 +6,9 @@ import lombok.Data;
 
 @Data
 public class RecommendDTO {
-	private Date regiterDate;
+	
+	private Long recommendNumber;
+	private Date registerDate;
 	private String recommendContents;
 	private Long storeNumber;
 	private Long memberId;
