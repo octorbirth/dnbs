@@ -1,12 +1,12 @@
 package org.bansang.dto;
-
 import java.util.Date;
-
 import lombok.Data;
 
 @Data
 public class RecommendDTO {
-	private Date regiterDate;
+
+	private Long recommendNumber;
+	private Date registerDate;
 	private String recommendContents;
 	private Long storeNumber;
 	private Long memberId;
@@ -14,4 +14,6 @@ public class RecommendDTO {
 	private String storeAddress;
 	private Double latitude;
 	private Double longtitude;
+	private String areaKeyword;
+
 }
