@@ -2,7 +2,7 @@ package org.bansang.web;
 
 import java.util.List;
 
-import org.bansang.dto.StoreDTO;
+import org.bansang.dto.RecommendDTO;
 import org.bansang.service.StoreService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -26,7 +26,7 @@ public class StoreController {
 	
 	
 	@GetMapping("/list")
-    public List<StoreDTO> list(){
+    public List<RecommendDTO> list(){
 		log.info("================");
 		log.info(""+storeService.list());
 		log.info("================");
@@ -34,7 +34,7 @@ public class StoreController {
     }
 	
 	@GetMapping("/view")
-	public StoreDTO getView(Long storeNumber) {
+	public RecommendDTO getView(Long storeNumber) {
 		log.info("================");
 		log.info(""+storeService.view(storeNumber));
 		log.info("================");

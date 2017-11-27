@@ -2,12 +2,13 @@ package org.bansang.service;
 
 import java.util.List;
 
-import org.bansang.dto.StoreDTO;
+import org.bansang.dto.RecommendDTO;
+
 
 public interface StoreService {
 
-	public List<StoreDTO> list();
+	public List<RecommendDTO> list();
 	
-	public StoreDTO view(Long storeNumber);
+	public RecommendDTO view(Long storeNumber);
 
 }

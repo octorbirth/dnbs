@@ -2,7 +2,7 @@ package org.bansang.service;
 
 import java.util.List;
 
-import org.bansang.dto.StoreDTO;
+import org.bansang.dto.RecommendDTO;
 import org.bansang.mapper.StoreMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -14,12 +14,12 @@ public class StoreServiceImpl implements StoreService {
 	StoreMapper storeMapper;
 	
 	@Override
-	public List<StoreDTO> list() {
+	public List<RecommendDTO> list() {
 		return storeMapper.listPage();
 	}
 
 	@Override
-	public StoreDTO view(Long storeNumber) {
+	public RecommendDTO view(Long storeNumber) {
 		return storeMapper.view(storeNumber);
 	}
 

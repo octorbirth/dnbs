@@ -10,4 +10,8 @@ public class RecommendDTO {
 	private String recommendContents;
 	private Long storeNumber;
 	private Long memberId;
+	private String storeName;
+	private String storeAddress;
+	private Double latitude;
+	private Double longtitude;
 }
