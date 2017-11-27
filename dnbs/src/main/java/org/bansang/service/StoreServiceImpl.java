@@ -1,5 +1,6 @@
 package org.bansang.service;
 
+
 import javax.inject.Inject;
 
 import org.bansang.dto.RecommendDTO;
@@ -30,4 +31,9 @@ public class StoreServiceImpl implements StoreService {
 		
 	}
 
+	@Override
+	public RecommendDTO getInfo(Long storeNum) {
+		
+		return storeMapper.selectInfo(storeNum);
+	}
 }
