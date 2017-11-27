@@ -1,6 +1,6 @@
 package org.bansang.web;
 
-import org.bansang.dto.StoreDTO;
+import org.bansang.dto.RecommendDTO;
 import org.bansang.service.StoreService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -12,7 +12,7 @@ public class StoreController {
 	StoreService storeService;
 	
 	@GetMapping("/{storeNum}")
-	public StoreDTO getRecommendList(@RequestParam("storeNum") Long storeNum) {
+	public RecommendDTO getRecommendList(@RequestParam("storeNum") Long storeNum) {
 	 		
 	 	return storeService.getInfo(storeNum);
 	}

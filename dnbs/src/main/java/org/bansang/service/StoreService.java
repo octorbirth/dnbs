@@ -1,9 +1,9 @@
 package org.bansang.service;
 
-import org.bansang.dto.StoreDTO;
+import org.bansang.dto.RecommendDTO;
 
 public interface StoreService {
 
-	public StoreDTO getInfo(Long storeNum);
+	public RecommendDTO getInfo(Long storeNum);
 
 }
