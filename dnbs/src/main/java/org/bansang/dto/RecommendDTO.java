@@ -15,5 +15,5 @@ public class RecommendDTO {
 	private String areaKeyword;
 	private Double latitude;
 	private Double longitude;
-	private Date regiterDate;
+	private Date registerDate;
 }

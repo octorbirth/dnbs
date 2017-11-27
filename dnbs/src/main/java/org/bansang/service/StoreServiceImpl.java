@@ -24,7 +24,7 @@ public class StoreServiceImpl implements StoreService {
 			storeMapper.register(dto);
 			recommendMapper.firstRegister(dto);
 		}else { // 기존의 등록된 가게로 추가적인 추천을 받았을 때
-			obj.setStoreNumber(dto.getStoreNumber());
+			dto.setStoreNumber(obj.getStoreNumber());
 			recommendMapper.plusRegister(dto);
 		}
 		
