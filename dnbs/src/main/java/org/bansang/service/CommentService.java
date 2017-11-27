@@ -10,6 +10,10 @@ public interface CommentService {
 	
 	public List<CommentDTO> commentList(Long recommendNumber);
 	
-	public void commentDelete(CommentDTO dto);
+	public void commentDelete(Long commentNumber);
+	
+	public void commentModify(CommentDTO dto);
+
+	
 
 }

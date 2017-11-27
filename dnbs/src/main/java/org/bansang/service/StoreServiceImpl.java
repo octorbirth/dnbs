@@ -1,8 +1,6 @@
 package org.bansang.service;
 
-
 import javax.inject.Inject;
-
 import org.bansang.dto.RecommendDTO;
 import org.bansang.mapper.RecommendMapper;
 import org.bansang.mapper.StoreMapper;
