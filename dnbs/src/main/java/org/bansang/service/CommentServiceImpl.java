@@ -14,6 +14,8 @@ import lombok.extern.java.Log;
 @Log
 public class CommentServiceImpl implements CommentService {
 	
+	
+	
 	@Inject
 	private CommentMapper commentMapper;
 	
@@ -35,8 +37,13 @@ public class CommentServiceImpl implements CommentService {
 	
 	
 	@Override
-	public void commentDelete(CommentDTO dto) {
-		commentMapper.deleteComment(dto.getCommentNumber());
+	public void commentDelete(Long commentNumber) {
+		commentMapper.deleteComment(commentNumber);		
+	}
+	
+	@Override
+	public void commentModify(CommentDTO dto) {
+		commentMapper.updateComment(dto);
 	}
 	
 	

@@ -5,6 +5,7 @@ import java.util.List;
 import org.apache.ibatis.annotations.Delete;
 import org.apache.ibatis.annotations.Insert;
 import org.apache.ibatis.annotations.Select;
+import org.apache.ibatis.annotations.Update;
 import org.bansang.dto.CommentDTO;
 
 public interface CommentMapper {
@@ -17,5 +18,8 @@ public interface CommentMapper {
 	
 	@Delete("delete from tbl_comment where comment_number = #{commentNumber}")
 	public void deleteComment(Long commentNumber);
+	
+	@Update("update tbl_comment set comment_contents = #{commentContents} where comment_number = #{commentNumber}")
+	public void updateComment(CommentDTO dto);
 
 }
