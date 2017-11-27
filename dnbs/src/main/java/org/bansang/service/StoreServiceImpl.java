@@ -18,4 +18,9 @@ public class StoreServiceImpl implements StoreService {
 		return storeMapper.listPage();
 	}
 
+	@Override
+	public StoreDTO view(Long storeNumber) {
+		return storeMapper.view(storeNumber);
+	}
+
 }

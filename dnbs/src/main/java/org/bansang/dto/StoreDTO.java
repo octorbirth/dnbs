@@ -4,7 +4,7 @@ import lombok.Data;
 
 @Data
 public class StoreDTO {
-	private Long storeNuber;
+	private Long storeNumber;
 	private String storeName;
 	private String storeAddress;
 	private Double latitude;

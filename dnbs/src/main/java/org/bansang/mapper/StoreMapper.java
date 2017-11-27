@@ -7,7 +7,10 @@ import org.bansang.dto.StoreDTO;
 
 public interface StoreMapper {
 
-	@Select("select * from table_store")
+	@Select("select * from tbl_store")
 	public List<StoreDTO> listPage();
+	
+	@Select("select * from tbl_store where store_number = #{storeNumber}")
+	public StoreDTO view(Long storeNumber);
 
 }

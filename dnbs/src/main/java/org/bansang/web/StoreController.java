@@ -33,4 +33,12 @@ public class StoreController {
 		return storeService.list();
     }
 	
+	@GetMapping("/view")
+	public StoreDTO getView(Long storeNumber) {
+		log.info("================");
+		log.info(""+storeService.view(storeNumber));
+		log.info("================");
+		return storeService.view(storeNumber);
+	}
+	
 }
