@@ -3,6 +3,7 @@ package org.bansang.web;
 import java.util.List;
 import org.apache.poi.ss.usermodel.Header;
 import org.bansang.dto.CommentDTO;
+import org.bansang.mapper.CommentMapper;
 import org.bansang.service.CommentService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpHeaders;
@@ -13,8 +14,10 @@ import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import lombok.extern.java.Log;
@@ -53,10 +56,20 @@ public class CommentController {
 	public ResponseEntity<String> deleteComment(@PathVariable("commentNumber") Long commentNumber){
 		log.info("del recommendNumber: "+ commentNumber);
 		
-//		commentService.commentDelete(dto);
+		commentService.commentDelete(commentNumber);
 		
-		return new ResponseEntity<String>("deleted", HttpStatus.OK);
+		return new ResponseEntity<String>("delete", HttpStatus.OK);
 		
+	}
+	
+	//댓글 수정
+	@PutMapping("/modify/{commentNumber}")
+	public ResponseEntity<String> updateComment(@PathVariable("commentNumber") Long commentNumber, @RequestBody CommentDTO dto){
+		
+		dto.setCommentNumber(commentNumber);
+		commentService.commentModify(dto);
+		
+		return new ResponseEntity<String>("modify", HttpStatus.OK);
 	}
 
 }
