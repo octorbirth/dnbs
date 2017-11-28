@@ -13,7 +13,7 @@ public class RecommendDTO {
 	private String storeName;
 	private String storeAddress;
 	private Double latitude;
-	private Double longtitude;
+	private Double longitude;
 	private String areaKeyword;
 
 }
