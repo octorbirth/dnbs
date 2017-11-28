@@ -9,11 +9,11 @@ public class RecommendDTO {
 	private Date registerDate;
 	private String recommendContents;
 	private Long storeNumber;
-	private String memberId;
+	private Long memberId;
 	private String storeName;
 	private String storeAddress;
-	private String areaKeyword;
 	private Double latitude;
-	private Double longitude;
+	private Double longtitude;
+	private String areaKeyword;
 
 }

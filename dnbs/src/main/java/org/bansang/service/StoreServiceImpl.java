@@ -6,23 +6,38 @@ import org.bansang.mapper.RecommendMapper;
 import org.bansang.mapper.StoreMapper;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+
+
 @Service
 public class StoreServiceImpl implements StoreService {
 
-	@Inject
-	private StoreMapper storeMapper;
-	
+	@Autowired
+	StoreMapper storeMapper;
 	@Inject
 	private RecommendMapper recommendMapper;
+	
+	@Override
+	public List<RecommendDTO> list() {
+		return storeMapper.listPage();
+	}
+
+	@Override
+	public RecommendDTO view(Long storeNumber) {
+		return storeMapper.view(storeNumber);
+	}
+
 	
 	@Override
 	public void register(RecommendDTO dto) {
 		
 		RecommendDTO obj = storeMapper.exist(dto);
-		if(obj == null) { // store 테이블에 없는 새로운 가게일 때
+		if(obj == null) { 
 			storeMapper.register(dto);
 			recommendMapper.firstRegister(dto);
-		}else { // 기존의 등록된 가게로 추가적인 추천을 받았을 때
+		}else { 
 			dto.setStoreNumber(obj.getStoreNumber());
 			recommendMapper.plusRegister(dto);
 		}
@@ -34,4 +49,5 @@ public class StoreServiceImpl implements StoreService {
 		
 		return storeMapper.selectInfo(storeNum);
 	}
+
 }

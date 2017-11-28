@@ -12,6 +12,9 @@ import org.springframework.web.bind.annotation.RestController;
 import lombok.extern.java.Log;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import java.util.List;
+
+
 @CrossOrigin
 @RestController
 @RequestMapping("/store/*")
@@ -21,14 +24,26 @@ public class StoreController {
 	@Autowired
 	private StoreService storeService;
 	
+	
+	@GetMapping("/list")
+    public List<RecommendDTO> list(){
+		log.info("================");
+		log.info(""+storeService.list());
+		log.info("================");
+		return storeService.list();
+    }
+	
+	@GetMapping("/view")
+	public RecommendDTO getView(Long storeNumber) {
+		log.info("================");
+		log.info(""+storeService.view(storeNumber));
+		log.info("================");
+		return storeService.view(storeNumber);
+	}
+	
 	@PostMapping("/recommend")
 	public void addValue(@RequestBody RecommendDTO dto){
 		storeService.register(dto);
-	}
-	
-	@GetMapping("/list")
-	public void list() {
-		
 	}
 	
 	@GetMapping("/{storeNum}")
@@ -36,4 +51,5 @@ public class StoreController {
 	 		
 	 	return storeService.getInfo(storeNum);
 	}
+
 }
