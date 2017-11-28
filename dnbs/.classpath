@@ -25,5 +25,8 @@
 			<attribute name="org.eclipse.jst.component.dependency" value="/WEB-INF/lib"/>
 		</attributes>
 	</classpathentry>
+	<classpathentry kind="lib" path="C:/Users/bit/.m2/repository/org/apache/poi/poi/3.17/poi-3.17.jar"/>
+	<classpathentry kind="lib" path="C:/Users/bit/.m2/repository/org/apache/poi/poi-ooxml/3.17/poi-ooxml-3.17.jar"/>
+	<classpathentry kind="lib" path="C:/Users/bit/.m2/repository/org/apache/poi/poi-ooxml-schemas/3.17/poi-ooxml-schemas-3.17.jar"/>
 	<classpathentry kind="output" path="target/classes"/>
 </classpath>
