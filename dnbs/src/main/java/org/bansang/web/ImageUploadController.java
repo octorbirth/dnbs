@@ -1,48 +1,36 @@
 package org.bansang.web;
 
 import java.io.FileOutputStream;
-import java.util.Base64;
-import java.util.Map;
+import java.io.IOException;
+import java.io.OutputStream;
+import java.util.UUID;
 
-import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.util.FileCopyUtils;
 import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.multipart.MultipartFile;
 
 import lombok.extern.java.Log;
 
 @RequestMapping("/upload/*")
-@Controller
+@RestController
 @Log
 public class ImageUploadController {
 
-	@GetMapping("/register")
-	public void uploadRecommendImageGet() {
-		System.out.println("upload register GET!!!!!!!!!!!!!");
-	}
-
-	@PostMapping("/")
-	public @ResponseBody String uploadRecommendImagePost(@RequestParam("file") String file) {
+	@PostMapping("/register")
+	public void uploadRecommendImagePost(@RequestParam("file") MultipartFile file) throws IOException {
 		System.out.println("upload register POST!!!!!!!!!!!!!");
 		log.info("" + file);
 		
-//		try {
-//			// This will decode the String which is encoded by using Base64 class
-//			byte[] imageByte = Base64.getDecoder().decode(file);
-//
-//			String directory = "C:\\zzz\\";
-//
-//			new FileOutputStream(directory).write(imageByte);
-//			return "success ";
-//		} catch (Exception e) {
-//			return "error = " + e;
-//		}
-		
-		return null;
+        log.info("======= UPLOAD =======");        
+
+        UUID uuid = UUID.randomUUID();
+        String uploadName = uuid.toString() + "_" + file.getOriginalFilename();
+        String filePath = "C:\\zzz\\zupload\\" + uploadName;
+        OutputStream out = new FileOutputStream(filePath);
+        FileCopyUtils.copy(file.getInputStream(), out);
 
 	}
 }
