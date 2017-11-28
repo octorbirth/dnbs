@@ -6,8 +6,6 @@ import org.bansang.dto.RecommendDTO;
 
 import java.util.List;
 
-
-
 public interface StoreMapper {
 	
 	@Insert("insert into tbl_store (store_name, store_address, latitude, longitude, area_keyword) values (#{storeName}, #{storeAddress}, #{latitude}, #{longitude}, #{areaKeyword} )")
