@@ -44,6 +44,10 @@ public class StoreController {
 	
 	@PostMapping("/recommend")
 	public void addValue(@RequestBody RecommendDTO dto){
+		log.info("================");
+		log.info("" + dto);
+		log.info("================");
+		
 		storeService.register(dto);
 	}
 	

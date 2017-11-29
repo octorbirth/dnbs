@@ -1,6 +1,8 @@
 package org.bansang.service;
 
 import javax.inject.Inject;
+import javax.swing.plaf.synth.SynthSplitPaneUI;
+
 import org.bansang.dto.RecommendDTO;
 import org.bansang.mapper.RecommendMapper;
 import org.bansang.mapper.StoreMapper;
@@ -32,7 +34,9 @@ public class StoreServiceImpl implements StoreService {
 	
 	@Override
 	public void register(RecommendDTO dto) {
-		
+		System.out.println("=====================");
+		System.out.println(dto);
+		System.out.println("=====================");
 		RecommendDTO obj = storeMapper.exist(dto);
 		if(obj == null) { 
 			storeMapper.register(dto);
