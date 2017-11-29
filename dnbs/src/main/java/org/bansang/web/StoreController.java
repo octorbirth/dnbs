@@ -33,6 +33,7 @@ public class StoreController {
 		return storeService.list();
     }
 	
+	
 	@GetMapping("/view")
 	public RecommendDTO getView(Long storeNumber) {
 		log.info("================");

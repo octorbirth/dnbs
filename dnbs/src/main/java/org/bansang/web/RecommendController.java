@@ -3,7 +3,6 @@ package org.bansang.web;
 import java.util.List;
 
 import org.bansang.dto.RecommendDTO;
-import org.bansang.dto.StoreDTO;
 import org.bansang.service.RecommendService;
 import org.bansang.service.StoreService;
 import org.springframework.beans.factory.annotation.Autowired;
